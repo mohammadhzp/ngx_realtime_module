@@ -1,0 +1,16 @@
+#!/bin/bash
+
+pushd "vendor"
+pushd "nginx"
+CFLAGS="-g -O0" ./configure           \
+    --with-debug                      \
+    --with-cc-opt='-O0 -g'            \
+    --prefix=$(pwd)/../../build/nginx \
+    --conf-path=conf/nginx.conf       \
+    --error-log-path=logs/error.log   \
+    --http-log-path=logs/access.log   \
+    --add-module=../../
+make -j3
+make install
+popd
+popd
