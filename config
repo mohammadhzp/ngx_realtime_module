@@ -1,6 +1,5 @@
 ngx_addon_name="ngx_realtime_module"
 HTTP_SRC="$ngx_addon_dir/ngx_http_realtime_module.c"
-#LIBS="-lhiredis -lredis_nginx_adapter"  # I didn't remove current line to leave it as a sample for future use
 
 if [ $ngx_module_link = DYNAMIC ] ; then
     if [ $HTTP != NO ]; then
